@@ -2,7 +2,7 @@
 
 Build a simple SNS API with **Django REST framework** and **Docker**.
 
-# Django-Rest-framework-todo
+# homework_sns_api
 
 Teaching materials for developing REST API with Django Rest framework for beginners like me.
 
