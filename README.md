@@ -9,7 +9,12 @@ Teaching materials for developing REST API with Django Rest framework for beginn
 # Learned Skills
 
 - Simple CRUD API creation skills using the Django REST framwork
-- Building a virtual environment with Docker
+    - Sign Up/Out
+    - Direct Message
+    - Friend Request
+    - Post
+
+- Build a virtual environment with Docker
 
 # How to get started
 
