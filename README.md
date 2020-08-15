@@ -9,7 +9,7 @@ Teaching materials for developing REST API with Django Rest framework for beginn
 # Learned Skills
 
 - Simple CRUD API creation skills using the Django REST framwork
-    - Sign Up/Out
+    - Sign Up/In
     - Direct Message
     - Friend Request
     - Post
