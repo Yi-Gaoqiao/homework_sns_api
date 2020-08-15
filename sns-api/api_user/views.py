@@ -33,7 +33,7 @@ class FriendRequestViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         """set a current logged in user automatically"""
         try:
-            serializer.save(requestFrom=self.request.user)
+            serializer.save(requestFrom=self.request.user, approved=False)
 
         except:
             raise ValidationError("User can have only unique request")

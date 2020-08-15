@@ -65,19 +65,19 @@ class ProfileSerializer(serializers.ModelSerializer):
         read_only_fields = ('base_user', 'created_at',)
 
 
-class RequestFilter(serializers.PrimaryKeyRelatedField):
-    """Not allow user to send friend request to its own"""
+# class RequestFilter(serializers.PrimaryKeyRelatedField):
+#     """Not allow user to send friend request to its own"""
 
-    def get_queryset(self):
-        request = self.context['request']
-        queryset = User.objects.exclude(id=request.user.id)
-        return queryset
+#     def get_queryset(self):
+#         request = self.context['request']
+#         queryset = User.objects.exclude(id=request.user.id)
+#         return queryset
 
 
 class FriendRequestSerializer(serializers.ModelSerializer):
     """Serializer for friend request model"""
 
-    requestTo = RequestFilter()
+    # requestTo = RequestFilter()
     
     class Meta:
         model = FriendRequest
