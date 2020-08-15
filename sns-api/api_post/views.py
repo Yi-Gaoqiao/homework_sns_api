@@ -10,7 +10,7 @@ class PostPermission(permissions.BasePermission):
         return obj.postBy.base_user.id == request.user.id
 
 
-class TodoPagination(pagination.PageNumberPagination):
+class PostPagination(pagination.PageNumberPagination):
     """Get 2 Todo items in a page"""
     page_size = 2
 
@@ -32,9 +32,10 @@ class PostViewSet(viewsets.ModelViewSet):
     """Create post for current logged in user"""
     authentication_classes = (authentication.TokenAuthentication,)
     permission_classes = (permissions.IsAuthenticated, PostPermission)
-    serializer_class = serializers.PostSerializer 
-    queryset = Post.objects.all()
-    pagination_class = TodoPagination
+    serializer_class = serializers.PostSerializer
+    # add 'order_by' when using pagination
+    queryset = Post.objects.order_by('-posted_at')
+    pagination_class = PostPagination
 
     def perform_create(self, serializer):
         serializer.save(postBy=self.request.user.base_user)
